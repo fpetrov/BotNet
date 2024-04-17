@@ -9,7 +9,7 @@ var commands = new BotCommands<BotOptions, BotPayload>()
   .SetCommand("/token", (bot, payload) => bot.SendMessage($"Current token: {bot.Options.Token}", payload))
   .SetCommand("/document", (bot, payload) => bot.SendDocument("https://website.com/document.word", payload));
             
-IBot<BotOptions, BotPayload> bot = new TelegramBot(commands);
+var bot = new TelegramBot(commands);
 
 await bot
   .Configure(options => {
